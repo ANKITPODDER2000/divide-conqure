@@ -10,7 +10,7 @@ int partition(int *arr, int s, int e)
 {
     int mark = *(arr + e);
     int i = s-1;
-    for(int j = s;j<e-1;j++){
+    for(int j = s;j<=e-1;j++){
         if(*(arr+j)<mark){
             i++;
             int c    = *(arr+j);
@@ -20,8 +20,8 @@ int partition(int *arr, int s, int e)
     }
     i++;
     int c      = *(arr+e);
-    *(arr+e)   = *(arr+i+1);
-    *(arr+i+1) = c;
+    *(arr+e)   = *(arr+i);
+    *(arr+i) = c;
     return i;
 }
 
