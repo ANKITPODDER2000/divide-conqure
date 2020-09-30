@@ -31,22 +31,22 @@ void max_min(int *arr , int s , int e)
     }
     else if(s+1==e){
         if(*(arr+s) > *(arr+e)){
-            max = *(arr+e);
-            min = *(arr+s);
-        }
-        else{
             max = *(arr+s);
             min = *(arr+e);
         }
+        else{
+            max = *(arr+e);
+            min = *(arr+s);
+        }
     }
     else{
-        int mid = (e-s) / 2;
+        int mid = (s+e) / 2;
         max_min(arr,s,mid);
         int max1 = max;
         int min1 = min;
         max_min(arr,mid+1,e);
-        max = max1 < max ? max1 : max;
-        min = min1 > min ? min1 : min;
+        max = max1 > max ? max1 : max;
+        min = min1 < min ? min1 : min;
     }
 }
 
