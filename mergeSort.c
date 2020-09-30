@@ -40,7 +40,7 @@ void merge(int *arr , int start , int mid , int end)
 
 void sort(int *arr , int start , int end)
 {
-    if(start <= end)
+    if(start < end)
     {
         int mid = (end + start) / 2;
         //printf("\n%d %d %d",start , mid , end);
